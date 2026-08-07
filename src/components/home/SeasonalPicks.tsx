@@ -56,6 +56,9 @@ export const SeasonalPicks: React.FC = () => {
                     <img
                       src={dest.imageUrl}
                       alt={dest.name}
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';
+                      }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3">
