@@ -10,28 +10,30 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0284c7',
-          600: '#0369a1',
-          700: '#075985',
-          800: '#0c4a6e',
-          900: '#0f172a',
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
         },
         accent: {
+          coral: '#fb7185',
+          blush: '#ffe4e6',
+          rose: '#f43f5e',
           orange: '#f97316',
-          coral: '#ff6b6b',
           emerald: '#10b981',
           amber: '#f59e0b',
         },
         darkBg: {
-          primary: '#0b1120',
-          secondary: '#151e32',
-          card: '#1e293b',
-          border: '#334155',
+          primary: '#0b1318',
+          secondary: '#131f24',
+          card: '#1a2930',
+          border: '#2a3c46',
         }
       },
       fontFamily: {
@@ -39,9 +41,9 @@ export default {
         display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.1)',
+        'glass': '0 8px 32px 0 rgba(20, 184, 166, 0.1)',
         'glass-dark': '0 8px 32px 0 rgba(0, 0, 0, 0.4)',
-        'glow': '0 0 20px rgba(2, 132, 199, 0.3)',
+        'glow': '0 0 20px rgba(20, 184, 166, 0.35)',
       }
     },
   },

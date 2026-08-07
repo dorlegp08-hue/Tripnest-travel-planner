@@ -47,7 +47,7 @@
 }
 
 .dark .leaflet-container {
-  background-color: #0b1120 !important;
+  background-color: #0b1318 !important;
 }
 
 .leaflet-popup-content-wrapper {
@@ -57,9 +57,9 @@
 
 .dark .leaflet-popup-content-wrapper,
 .dark .leaflet-popup-tip {
-  background-color: #1e293b !important;
+  background-color: #1a2930 !important;
   color: #f8fafc !important;
-  border: 1px solid #334155;
+  border: 1px solid #2a3c46;
 }
 
 /* Custom glassmorphism classes */
@@ -71,8 +71,20 @@
 }
 
 .dark .glass-panel {
-  background: rgba(21, 30, 50, 0.75);
+  background: rgba(19, 31, 36, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* Theme Gradient Utilities matching the uploaded palette */
+.theme-gradient-bg {
+  background: linear-gradient(135deg, #2dd4bf 0%, #ccfbf1 50%, #ffe4e6 100%);
+}
+
+.theme-gradient-text {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #fb7185 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
