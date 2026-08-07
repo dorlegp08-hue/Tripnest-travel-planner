@@ -22,8 +22,15 @@ export const SearchPage: React.FC = () => {
     selectedWeather,
     selectedBudget,
     selectedTypes,
-    sortBy
+    sortBy,
+    resetFilters
   } = useFilterStore();
+
+  // Reset all filters every time the Discover page is opened
+  useEffect(() => {
+    resetFilters();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Sync URL ?q= query string to store on load
   useEffect(() => {
@@ -37,10 +44,20 @@ export const SearchPage: React.FC = () => {
 
   // Client-side real filtering logic
   const filteredDestinations = useMemo(() => {
+    // Helper: check if a destination's numeric pricePerDay falls within any selected budget range
+    const matchesBudget = (pricePerDay: number): boolean => {
+      return selectedBudget.some((level) => {
+        if (level === 'low') return pricePerDay < 2000;
+        if (level === 'medium') return pricePerDay >= 2000 && pricePerDay <= 4000;
+        if (level === 'high') return pricePerDay > 4000;
+        return false;
+      });
+    };
+
     return mockDestinations.filter((dest) => {
       // Debounced search text match on name, state, country, or description
       if (debouncedSearch) {
-        const term = debouncedSearch.toLowerCase();
+        const term = debouncedSearch.toLowerCase().trim();
         const matchesName = dest.name.toLowerCase().includes(term);
         const matchesState = dest.state.toLowerCase().includes(term);
         const matchesDesc = dest.description.toLowerCase().includes(term);
@@ -48,19 +65,21 @@ export const SearchPage: React.FC = () => {
         if (!matchesName && !matchesState && !matchesDesc && !matchesType) return false;
       }
 
-      // Weather filter
-      if (selectedWeather.length > 0 && !selectedWeather.includes(dest.weather)) {
+      // Weather filter — OR within category, case-normalized
+      if (selectedWeather.length > 0) {
+        const destWeather = dest.weather.toLowerCase().trim();
+        if (!selectedWeather.some((w) => w.toLowerCase().trim() === destWeather)) return false;
+      }
+
+      // Budget filter — OR within category, numeric pricePerDay range comparison
+      if (selectedBudget.length > 0 && !matchesBudget(dest.pricePerDay)) {
         return false;
       }
 
-      // Budget filter
-      if (selectedBudget.length > 0 && !selectedBudget.includes(dest.budgetLevel)) {
-        return false;
-      }
-
-      // Destination type filter
-      if (selectedTypes.length > 0 && !selectedTypes.includes(dest.type)) {
-        return false;
+      // Destination type filter — OR within category, case-normalized
+      if (selectedTypes.length > 0) {
+        const destType = dest.type.toLowerCase().trim();
+        if (!selectedTypes.some((t) => t.toLowerCase().trim() === destType)) return false;
       }
 
       return true;
@@ -107,7 +126,7 @@ export const SearchPage: React.FC = () => {
 
       {/* Main Content Layout */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        
+
         {/* Desktop Sidebar Filters */}
         <div className="hidden md:block md:col-span-1">
           <FilterSidebar className="sticky top-28" />
@@ -167,6 +186,7 @@ export const SearchPage: React.FC = () => {
           </div>
         )}
       </AnimatePresence>
+
 
       {/* Quick Specs Detail Modal */}
       <DestinationDetailModal
