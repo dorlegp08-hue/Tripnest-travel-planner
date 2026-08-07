@@ -29,7 +29,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
   };
 
   return (
-    <div className="group relative bg-white dark:bg-darkBg-card p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-3">
+    <div className="group relative site-card card-hover-pop p-4 rounded-xl shadow-sm flex items-center justify-between gap-3">
       
       {/* Left Content */}
       <div className="space-y-1.5 min-w-0">

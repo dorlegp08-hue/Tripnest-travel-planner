@@ -20,8 +20,8 @@ export const Card: React.FC<CardProps> = ({
       onClick={onClick}
       className={twMerge(
         clsx(
-          'bg-white dark:bg-darkBg-card rounded-2xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-sm transition-all duration-300',
-          hoverEffect && 'hover:shadow-xl hover:-translate-y-1 hover:border-brand-500/30 cursor-pointer',
+          'site-card p-5 shadow-sm transition-all duration-300',
+          hoverEffect && 'card-hover-pop cursor-pointer',
           className
         )
       )}

@@ -17,7 +17,7 @@ export const Badge: React.FC<BadgeProps> = ({
   icon,
   className
 }) => {
-  const baseStyles = 'inline-flex items-center gap-1 font-medium rounded-full tracking-wide';
+  const baseStyles = 'inline-flex items-center gap-1 font-medium rounded-full tracking-wide transition-all duration-300 ease-in-out hover-gradient-effect cursor-default';
 
   const variants = {
     sunny: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 border border-amber-300/50',
