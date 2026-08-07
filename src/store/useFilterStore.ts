@@ -30,8 +30,8 @@ export const useFilterStore = create<FilterState>((set) => ({
   toggleWeatherFilter: (weather) =>
     set((state) => ({
       selectedWeather: state.selectedWeather.includes(weather)
-        ? state.selectedWeather.filter((w) => w !== weather)
-        : [...state.selectedWeather, weather]
+        ? [] // Deselect if already selected
+        : [weather] // Only one weather active at a time
     })),
 
   toggleBudgetFilter: (budget) =>

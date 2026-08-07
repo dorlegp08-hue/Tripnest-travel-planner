@@ -1,156 +1,186 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useFilterStore } from '../../store/useFilterStore';
+
+interface Snowflake {
+  id: number;
+  left: number;
+  size: number;
+  variant: 1 | 2 | 3;
+  duration: number;
+  delay: number;
+  opacity: number;
+  driftX: number;
+  spinDeg: number;
+}
+
+const SnowflakeSVG: React.FC<{ variant: 1 | 2 | 3; size: number }> = ({ variant, size }) => {
+  if (variant === 1) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" />
+        <path d="M12 6l-2-2M12 6l2-2M12 18l-2 2M12 18l2 2M6 12l-2-2M6 12l-2 2M18 12l2-2M18 12l2 2" />
+      </svg>
+    );
+  }
+  if (variant === 2) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
+        <path d="M12 2v20M2 12h20M5 5l14 14M5 19L19 5" />
+        <circle cx="12" cy="12" r="3" fill="currentColor" fillOpacity="0.3" />
+      </svg>
+    );
+  }
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+      <path d="M12 2.5v19M2.5 12h19M5.27 5.27l13.46 13.46M5.27 18.73L18.73 5.27" />
+      <path d="M12 5l-2.5-2.5M12 5l2.5-2.5M12 19l-2.5 2.5M12 19l2.5 2.5" />
+      <path d="M5 12l-2.5-2.5M5 12l-2.5 2.5M19 12l2.5-2.5M19 12l2.5 2.5" />
+    </svg>
+  );
+};
 
 export const WeatherEffectsContainer: React.FC = () => {
-  const [activeCornerEffect, setActiveCornerEffect] = useState<'sunny' | 'snowy' | null>(null);
-  const [showRainOverlay, setShowRainOverlay] = useState(false);
+  const location = useLocation();
+  const isDiscoverPage = location.pathname === '/search';
+  const selectedWeather = useFilterStore((s) => s.selectedWeather);
+
+  // Active weather selection string ("sunny" | "rainy" | "snowy" | null)
+  const activeWeather = selectedWeather.length > 0 ? selectedWeather[0] : null;
+
+  const [activeAnimation, setActiveAnimation] = useState<'sunny' | 'rainy' | 'snowy' | null>(null);
+  const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
 
   useEffect(() => {
-    let rainTimeout: ReturnType<typeof setTimeout>;
+    // Completely disable and clean up if not on Discover page or if no weather is selected
+    if (!isDiscoverPage || !activeWeather) {
+      setActiveAnimation(null);
+      setSnowflakes([]);
+      return;
+    }
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (!target) return;
-      const weatherText = target.innerText?.toLowerCase() || target.getAttribute('data-weather')?.toLowerCase() || '';
+    let timer: ReturnType<typeof setTimeout>;
 
-      if (weatherText.includes('sunny')) {
-        setActiveCornerEffect('sunny');
-      } else if (weatherText.includes('snowy') || weatherText.includes('snow')) {
-        setActiveCornerEffect('snowy');
-      }
-    };
-
-    const handleMouseOut = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (!target) return;
-      const weatherText = target.innerText?.toLowerCase() || target.getAttribute('data-weather')?.toLowerCase() || '';
-      if (weatherText.includes('sunny') || weatherText.includes('snowy') || weatherText.includes('snow')) {
-        setActiveCornerEffect(null);
-      }
-    };
-
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (!target) return;
-      const weatherText = target.innerText?.toLowerCase() || target.getAttribute('data-weather')?.toLowerCase() || '';
-
-      if (weatherText.includes('rainy') || weatherText.includes('rain')) {
-        setShowRainOverlay(true);
-        clearTimeout(rainTimeout);
-        rainTimeout = setTimeout(() => {
-          setShowRainOverlay(false);
-        }, 500); // 0.5 seconds rain overlay
-      } else if (weatherText.includes('snowy') || weatherText.includes('snow')) {
-        setActiveCornerEffect('snowy');
-      } else if (weatherText.includes('sunny')) {
-        setActiveCornerEffect('sunny');
-      }
-    };
-
-    document.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseout', handleMouseOut);
-    document.addEventListener('click', handleClick);
+    if (activeWeather === 'sunny') {
+      setActiveAnimation('sunny');
+      timer = setTimeout(() => {
+        setActiveAnimation(null);
+      }, 850);
+    } else if (activeWeather === 'rainy') {
+      setActiveAnimation('rainy');
+      timer = setTimeout(() => {
+        setActiveAnimation(null);
+      }, 1000);
+    } else if (activeWeather === 'snowy') {
+      const flakes: Snowflake[] = Array.from({ length: 18 }).map((_, idx) => ({
+        id: idx,
+        left: Math.random() * 92 + 3,
+        size: Math.floor(20 + Math.random() * 15),
+        variant: (Math.floor(Math.random() * 3) + 1) as 1 | 2 | 3,
+        duration: 0.8 + Math.random() * 0.4,
+        delay: Math.random() * 0.2,
+        opacity: 0.4 + Math.random() * 0.45,
+        driftX: (Math.random() - 0.5) * 60,
+        spinDeg: Math.random() > 0.5 ? 180 : -180,
+      }));
+      setSnowflakes(flakes);
+      setActiveAnimation('snowy');
+      timer = setTimeout(() => {
+        setActiveAnimation(null);
+      }, 1000);
+    } else {
+      setActiveAnimation(null);
+    }
 
     return () => {
-      document.removeEventListener('mouseover', handleMouseOver);
-      document.removeEventListener('mouseout', handleMouseOut);
-      document.removeEventListener('click', handleClick);
-      clearTimeout(rainTimeout);
+      clearTimeout(timer);
     };
-  }, []);
+  }, [isDiscoverPage, activeWeather]);
+
+  if (!isDiscoverPage) return null;
 
   return (
     <>
-      {/* Top-Right Weather Element Pop-in Container */}
-      <div className="fixed top-24 right-8 z-50 pointer-events-none">
-        <AnimatePresence>
-          {activeCornerEffect === 'sunny' && (
-            <motion.div
-              key="sun"
-              initial={{ scale: 0, opacity: 0, rotate: -45 }}
-              animate={{ scale: 1, opacity: 1, rotate: 0 }}
-              exit={{ scale: 0, opacity: 0, rotate: 45 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-              className="flex items-center justify-center relative"
-            >
-              {/* Outer Glowing Rays */}
-              <div className="absolute w-28 h-28 rounded-full bg-amber-400/30 blur-xl animate-pulse" />
-              
-              {/* Sun Core with Rays SVG */}
-              <div className="relative w-20 h-20 bg-gradient-to-tr from-amber-400 to-yellow-300 rounded-full shadow-lg shadow-amber-500/50 flex items-center justify-center border-2 border-yellow-200">
-                <svg className="w-16 h-16 text-amber-100 animate-sun-rays" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="5" fill="currentColor" className="text-yellow-300" />
-                  <line x1="12" y1="1" x2="12" y2="3" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="12" y1="21" x2="12" y2="23" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="1" y1="12" x2="3" y2="12" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="21" y1="12" x2="23" y2="12" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" strokeWidth="2.5" strokeLinecap="round" />
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" strokeWidth="2.5" strokeLinecap="round" />
-                </svg>
-              </div>
-            </motion.div>
-          )}
-
-          {activeCornerEffect === 'snowy' && (
-            <motion.div
-              key="snowman"
-              initial={{ scale: 0, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0, opacity: 0, y: 20 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-              className="flex flex-col items-center justify-center p-3 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-sky-200/80 shadow-2xl"
-            >
-              {/* Cute Snowman SVG Illustration */}
-              <svg className="w-16 h-20" viewBox="0 0 100 120">
-                {/* Snowman Body Bottom */}
-                <circle cx="50" cy="85" r="28" fill="#F0F9FF" stroke="#38BDF8" strokeWidth="3" />
-                {/* Snowman Body Middle */}
-                <circle cx="50" cy="50" r="20" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="3" />
-                {/* Snowman Head */}
-                <circle cx="50" cy="24" r="14" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="3" />
-                {/* Eyes */}
-                <circle cx="45" cy="22" r="2" fill="#0F172A" />
-                <circle cx="55" cy="22" r="2" fill="#0F172A" />
-                {/* Carrot Nose */}
-                <polygon points="50,24 62,26 50,28" fill="#F97316" />
-                {/* Buttons */}
-                <circle cx="50" cy="45" r="2" fill="#0F172A" />
-                <circle cx="50" cy="53" r="2" fill="#0F172A" />
-                <circle cx="50" cy="61" r="2" fill="#0F172A" />
-                {/* Scarf */}
-                <path d="M38,34 Q50,40 62,34" stroke="#F43F5E" strokeWidth="4" fill="none" strokeLinecap="round" />
-                {/* Top Hat */}
-                <rect x="38" y="8" width="24" height="4" rx="2" fill="#0F172A" />
-                <rect x="42" y="1" width="16" height="8" rx="1" fill="#0F172A" />
-              </svg>
-              <span className="text-[10px] font-bold text-sky-600 dark:text-sky-300 mt-1">Snowy Magic</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Full-Screen Rain Overlay (0.5s duration) */}
+      {/* Sunny Weather Interaction: Soft warm sunlight bloom from top-right */}
       <AnimatePresence>
-        {showRainOverlay && (
+        {activeAnimation === 'sunny' && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 pointer-events-none overflow-hidden bg-slate-900/10 backdrop-blur-[1px]"
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="fixed inset-0 z-50 pointer-events-none overflow-hidden"
           >
-            {Array.from({ length: 40 }).map((_, idx) => (
+            <div
+              className="absolute -top-20 -right-20 w-[550px] h-[550px] rounded-full"
+              style={{
+                background: 'radial-gradient(circle at 70% 30%, rgba(255, 252, 235, 0.28) 0%, rgba(254, 240, 138, 0.18) 35%, rgba(253, 224, 71, 0.06) 65%, transparent 80%)',
+                filter: 'blur(40px)',
+              }}
+            />
+            <div
+              className="absolute top-0 right-0 w-full h-[60vh]"
+              style={{
+                background: 'radial-gradient(ellipse at 85% 15%, rgba(255, 248, 220, 0.12) 0%, rgba(253, 230, 138, 0.05) 50%, transparent 80%)',
+                filter: 'blur(30px)',
+              }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Rainy Weather Interaction: Thin, semi-transparent rain streaks overlay (1s) */}
+      <AnimatePresence>
+        {activeAnimation === 'rainy' && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="fixed inset-0 z-50 pointer-events-none overflow-hidden bg-slate-900/5 backdrop-blur-[0.5px]"
+          >
+            {Array.from({ length: 30 }).map((_, idx) => (
               <div
                 key={idx}
                 className="raindrop"
                 style={{
-                  left: `${(idx * 2.5) + (Math.random() * 2)}%`,
-                  animationDuration: `${0.3 + Math.random() * 0.2}s`,
-                  animationDelay: `${Math.random() * 0.2}s`
+                  left: `${(idx * 3.3) + (Math.random() * 2)}%`,
+                  animationDuration: `${0.6 + Math.random() * 0.4}s`,
+                  animationDelay: `${Math.random() * 0.15}s`,
+                  opacity: 0.3 + Math.random() * 0.3,
                 }}
               />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Snowy Weather Interaction: Gentle floating vector snowflakes overlay (1s) */}
+      <AnimatePresence>
+        {activeAnimation === 'snowy' && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="fixed inset-0 z-50 pointer-events-none overflow-hidden bg-slate-900/5 backdrop-blur-[0.5px]"
+          >
+            {snowflakes.map((flake) => (
+              <div
+                key={flake.id}
+                className="snowflake-item"
+                style={{
+                  left: `${flake.left}%`,
+                  animationDuration: `${flake.duration}s`,
+                  animationDelay: `${flake.delay}s`,
+                  ['--flake-opacity' as any]: flake.opacity,
+                  ['--drift-x' as any]: `${flake.driftX}px`,
+                  ['--spin-deg' as any]: `${flake.spinDeg}deg`,
+                }}
+              >
+                <SnowflakeSVG variant={flake.variant} size={flake.size} />
+              </div>
             ))}
           </motion.div>
         )}

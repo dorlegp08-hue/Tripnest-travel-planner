@@ -5,6 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
 import { useFilterStore } from '../../store/useFilterStore';
 
+const navLinks = [
+  { path: '/', label: 'Home', icon: Compass },
+  { path: '/search', label: 'Discover', icon: SlidersHorizontal },
+  { path: '/map', label: 'Interactive Map', icon: MapPin },
+  { path: '/itinerary', label: 'Itinerary Planner', icon: Calendar },
+  { path: '/bonus', label: 'Travel Toolkit', icon: Sparkles },
+];
+
 export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [navSearchText, setNavSearchText] = useState('');
@@ -21,19 +29,11 @@ export const Navbar: React.FC = () => {
     }
   };
 
-  const navLinks = [
-    { path: '/', label: 'Home', icon: Compass },
-    { path: '/search', label: 'Discover', icon: SlidersHorizontal },
-    { path: '/map', label: 'Interactive Map', icon: MapPin },
-    { path: '/itinerary', label: 'Itinerary Planner', icon: Calendar },
-    { path: '/bonus', label: 'Travel Toolkit', icon: Sparkles }
-  ];
-
   return (
     <header className="sticky top-0 z-40 w-full glass-panel border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
+
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 flex items-center justify-center text-white shadow-md shadow-brand-500/30 group-hover:scale-105 transition-transform duration-300">
@@ -57,10 +57,11 @@ export const Navbar: React.FC = () => {
                 <NavLink
                   key={link.path}
                   to={link.path}
+                  end={link.path === '/'}
                   className={({ isActive }) =>
                     `flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover-gradient-effect neon-glass-hover ${
                       isActive
-                        ? 'bg-gradient-to-r from-brand-600 via-purple-600 to-accent-coral text-[#E6FCFF] font-bold shadow-md border border-sky-300/50'
+                        ? 'nav-desktop-active'
                         : 'text-slate-700 dark:text-slate-200'
                     }`
                   }
@@ -131,11 +132,12 @@ export const Navbar: React.FC = () => {
                     <NavLink
                       key={link.path}
                       to={link.path}
+                      end={link.path === '/'}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={({ isActive }) =>
-                        `flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                        `flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                           isActive
-                            ? 'bg-brand-500 text-white font-semibold'
+                            ? 'nav-mobile-active font-semibold'
                             : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                         }`
                       }

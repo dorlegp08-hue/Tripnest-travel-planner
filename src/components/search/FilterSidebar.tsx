@@ -79,6 +79,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ className = '', on
             return (
               <button
                 key={opt.type}
+                data-weather-type={opt.type}
                 onClick={() => toggleWeatherFilter(opt.type)}
                 className={`flex items-center gap-2 p-2.5 rounded-xl border text-xs font-semibold transition-all ${
                   isSelected

@@ -20,11 +20,11 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] hover-gradient-effect';
 
   const variants = {
-    primary: 'bg-slate-900 text-white shadow-md shadow-purple-500/20 focus:ring-purple-400',
-    secondary: 'bg-white/80 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 shadow-sm focus:ring-purple-400',
-    outline: 'border border-slate-300 dark:border-slate-700 bg-white/40 dark:bg-slate-900/40 text-slate-800 dark:text-slate-200 focus:ring-purple-400',
-    ghost: 'bg-transparent text-slate-800 dark:text-slate-200 focus:ring-purple-400',
-    danger: 'bg-red-500 text-white focus:ring-red-500'
+    primary: 'bg-slate-900 dark:bg-gradient-to-b dark:from-[#1F4A53] dark:via-[#2A3F50] dark:to-[#4C3B4E] text-white dark:text-[#E6FCFF] shadow-md shadow-slate-900/20 dark:shadow-teal-900/40 border border-transparent dark:border-teal-500/20 focus:ring-teal-400 dark:hover:brightness-110 dark:hover:border-teal-300/40 dark:hover:shadow-teal-500/20',
+    secondary: 'bg-white/80 dark:bg-gradient-to-b dark:from-[#1F4A53]/80 dark:via-[#2A3F50]/80 dark:to-[#4C3B4E]/80 text-slate-800 dark:text-[#E6FCFF] shadow-sm border border-slate-200 dark:border-teal-500/20 backdrop-blur-md focus:ring-teal-400 dark:hover:brightness-110 dark:hover:border-teal-300/40',
+    outline: 'border border-slate-300 dark:border-teal-400/30 bg-white/40 dark:bg-gradient-to-b dark:from-[#1F4A53]/40 dark:via-[#2A3F50]/40 dark:to-[#4C3B4E]/40 text-slate-800 dark:text-[#E6FCFF] backdrop-blur-md focus:ring-teal-400 dark:hover:brightness-110 dark:hover:border-teal-300/50',
+    ghost: 'bg-transparent text-slate-800 dark:text-[#E6FCFF] focus:ring-teal-400 dark:hover:bg-teal-900/30 dark:hover:text-white',
+    danger: 'bg-red-500 dark:bg-red-600 text-white focus:ring-red-500 dark:hover:brightness-110'
   };
 
   const sizes = {
