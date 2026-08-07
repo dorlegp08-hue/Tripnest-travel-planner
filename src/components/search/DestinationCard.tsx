@@ -60,12 +60,12 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({ destination, o
             <span>{destination.rating.toFixed(1)}</span>
           </div>
 
-          <div className="absolute bottom-3 left-3 text-white">
-            <div className="flex items-center gap-1 text-brand-200 text-xs font-medium">
-              <MapPin className="w-3 h-3" />
+          <div className="absolute bottom-3 left-3 text-[#E6FCFF]">
+            <div className="flex items-center gap-1 text-[#E6FCFF]/90 text-xs font-medium">
+              <MapPin className="w-3 h-3 text-[#E6FCFF]" />
               <span>{destination.state}</span>
             </div>
-            <h3 className="text-xl font-bold font-display leading-tight">{destination.name}</h3>
+            <h3 className="text-xl font-bold font-display leading-tight text-[#E6FCFF]">{destination.name}</h3>
           </div>
         </div>
 

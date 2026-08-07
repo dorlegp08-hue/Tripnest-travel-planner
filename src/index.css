@@ -57,9 +57,9 @@
 
 .dark .leaflet-popup-content-wrapper,
 .dark .leaflet-popup-tip {
-  background-color: #1a2930 !important;
-  color: #f8fafc !important;
-  border: 1px solid #2a3c46;
+  background-color: #1e3540 !important;
+  color: #f0fdfa !important;
+  border: 1px solid rgba(137, 207, 240, 0.15);
 }
 
 /* Custom glassmorphism classes */
@@ -71,15 +71,29 @@
 }
 
 .dark .glass-panel {
-  background: rgba(19, 31, 36, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(31, 48, 60, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(137, 207, 240, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Page background: smooth linear gradient top to bottom (blue -> purple -> pink) */
+/* Page background: light mode top-to-bottom gradient, dark mode premium cinematic gradient */
 .page-gradient-bg {
   background: linear-gradient(to bottom, #89CFF0 0%, #B892FF 50%, #FFB6E6 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Dark mode premium gradient: Deep Teal -> Slate Blue -> Rich Muted Purple */
+.dark .page-gradient-bg {
+  background: linear-gradient(
+    to bottom,
+    #1F4A53 0%,
+    #2A3F50 25%,
+    #343D4F 55%,
+    #3E3A4D 75%,
+    #4C3B4E 100%
+  ) !important;
   background-attachment: fixed !important;
 }
 
@@ -123,7 +137,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Custom Card Styling: #E6FCFF with slight pop and translucent gradient border on hover */
 .site-card {
   background-color: #E6FCFF !important;
   color: #0f172a !important;
@@ -132,23 +145,87 @@
   transition: all 300ms ease-in-out !important;
 }
 
+/* Dark mode card: frosted teal-slate surface */
+.dark .site-card {
+  background-color: rgba(44, 62, 80, 0.75) !important;
+  color: #e0f4f8 !important;
+  border: 1px solid rgba(137, 207, 240, 0.18) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 .site-card h1, .site-card h2, .site-card h3, .site-card h4, .site-card p, .site-card span {
   color: #0f172a;
+}
+
+.dark .site-card h1, .dark .site-card h2, .dark .site-card h3,
+.dark .site-card h4, .dark .site-card p, .dark .site-card span {
+  color: #e0f4f8;
 }
 
 .card-hover-pop {
   transition: all 300ms ease-in-out !important;
 }
 
-.card-hover-pop:hover,
-.site-card:hover {
-  transform: translateY(-6px) scale(1.01) !important;
-  box-shadow: 0 16px 32px -5px rgba(137, 207, 240, 0.35), 0 0 20px rgba(255, 182, 230, 0.35) !important;
+/* Text over images/card overlays color */
+.text-overlay-ice {
+  color: #E6FCFF !important;
+}
+
+.neon-glass-hover {
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Light mode neon glass hover */
+.neon-glass-hover:hover {
+  box-shadow: 0 0 20px rgba(137, 207, 240, 0.5), 0 0 10px rgba(255, 182, 230, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.2) !important;
   border: 1.5px solid transparent !important;
-  background-image: linear-gradient(#E6FCFF, #E6FCFF), linear-gradient(to top right, rgba(137, 207, 240, 0.8), rgba(184, 146, 255, 0.8), rgba(255, 182, 230, 0.8)) !important;
+  background-image: linear-gradient(#E6FCFF, #E6FCFF), linear-gradient(to top right, rgba(137, 207, 240, 0.9), rgba(184, 146, 255, 0.9), rgba(255, 182, 230, 0.9)) !important;
   background-origin: border-box !important;
   background-clip: padding-box, border-box !important;
 }
+
+/* Dark mode neon glass hover: teal-blue -> purple glow */
+.dark .neon-glass-hover:hover {
+  box-shadow: 0 0 24px rgba(31, 74, 83, 0.8), 0 0 12px rgba(76, 59, 78, 0.6), inset 0 0 20px rgba(137, 207, 240, 0.08) !important;
+  border: 1.5px solid transparent !important;
+  background-image: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), linear-gradient(to top right, rgba(31, 74, 83, 0.9), rgba(52, 61, 79, 0.9), rgba(76, 59, 78, 0.9)) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+}
+
+/* Raindrop Overlay Animations */
+@keyframes raindropFall {
+  0% {
+    transform: translateY(-20px) scaleY(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) scaleY(1.5);
+    opacity: 0.2;
+  }
+}
+
+.raindrop {
+  position: absolute;
+  top: -20px;
+  width: 2px;
+  height: 25px;
+  background: linear-gradient(to bottom, rgba(137, 207, 240, 0.8), rgba(255, 255, 255, 0.6));
+  animation: raindropFall 0.5s linear infinite;
+  border-radius: 9999px;
+}
+
+/* Sun Pop Animation */
+@keyframes sunSpinRays {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-sun-rays {
+  animation: sunSpinRays 12s linear infinite;
+}
+
 
 
 

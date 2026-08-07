@@ -101,22 +101,25 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ className = '', on
           {typeOptions.map((opt) => {
             const Icon = opt.icon;
             const isSelected = selectedTypes.includes(opt.type);
+            const isHeritage = opt.type === 'heritage';
             return (
               <button
                 key={opt.type}
                 onClick={() => toggleTypeFilter(opt.type)}
-                className={`w-full flex items-center justify-between p-3 rounded-xl border text-xs font-semibold transition-all ${
-                  isSelected
-                    ? 'bg-brand-500 text-white border-brand-500 shadow-md shadow-brand-500/20'
-                    : 'bg-white dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
+                className={`w-full flex items-center justify-between p-3 rounded-xl border text-xs font-semibold transition-all neon-glass-hover ${
+                  isHeritage
+                    ? 'bg-[#E6FCFF] text-slate-900 border-sky-300 shadow-md font-bold'
+                    : isSelected
+                    ? 'bg-gradient-to-r from-brand-600 to-purple-600 text-white border-brand-500 shadow-md'
+                    : 'bg-[#E6FCFF] text-slate-900 border-slate-200 hover:border-brand-300'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <Icon className={`w-4 h-4 ${isSelected ? 'text-white' : 'text-brand-500'}`} />
+                  <Icon className={`w-4 h-4 ${isHeritage ? 'text-amber-600' : isSelected ? 'text-white' : 'text-brand-600'}`} />
                   <span>{opt.label}</span>
                 </div>
-                <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${isSelected ? 'border-white bg-white/20' : 'border-slate-300 dark:border-slate-600'}`}>
-                  {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
+                <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${isSelected ? 'border-slate-900 bg-slate-900/20' : 'border-slate-400'}`}>
+                  {isSelected && <div className="w-2 h-2 rounded-full bg-slate-900" />}
                 </div>
               </button>
             );

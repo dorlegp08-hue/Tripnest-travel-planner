@@ -58,9 +58,9 @@ export const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover-gradient-effect ${
+                    `flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover-gradient-effect neon-glass-hover ${
                       isActive
-                        ? 'bg-slate-900 text-white shadow-sm'
+                        ? 'bg-gradient-to-r from-brand-600 via-purple-600 to-accent-coral text-[#E6FCFF] font-bold shadow-md border border-sky-300/50'
                         : 'text-slate-700 dark:text-slate-200'
                     }`
                   }

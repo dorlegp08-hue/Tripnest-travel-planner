@@ -30,10 +30,10 @@ export default {
           amber: '#f59e0b',
         },
         darkBg: {
-          primary: '#0b1318',
-          secondary: '#131f24',
-          card: '#1a2930',
-          border: '#2a3c46',
+          primary: '#1A3540',   /* Deep teal base - replaces pure black */
+          secondary: '#243848', /* Muted teal-blue - section backgrounds */
+          card: '#2C3E50',      /* Slate-blue card surfaces */
+          border: '#3A4A5C',    /* Subtle teal-blue borders */
         }
       },
       fontFamily: {

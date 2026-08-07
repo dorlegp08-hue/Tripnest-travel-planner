@@ -37,14 +37,14 @@ export const HeroSection: React.FC = () => {
       <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-accent-coral/20 rounded-full blur-3xl pointer-events-none" />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 text-white">
+      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 text-[#E6FCFF]">
         
         {/* Header Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold uppercase tracking-widest text-brand-300 shadow-lg"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold uppercase tracking-widest text-[#E6FCFF] shadow-lg"
         >
           <Sparkles className="w-4 h-4 text-amber-400" />
           <span>Next-Gen Travel Itinerary Planner</span>
@@ -55,10 +55,10 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.15]"
+          className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.15] text-[#E6FCFF]"
         >
           Discover & Plan Your Ideal <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-brand-300 via-sky-200 to-accent-coral bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#E6FCFF] via-sky-200 to-rose-200 bg-clip-text text-transparent">
             Indian Travel Escapes
           </span>
         </motion.h1>
@@ -68,7 +68,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-xl text-[#E6FCFF] font-medium max-w-2xl mx-auto leading-relaxed"
         >
           Smart weather-aware destination discovery, day-by-day itinerary building, live Leaflet maps, and instant budget tools.
         </motion.p>
