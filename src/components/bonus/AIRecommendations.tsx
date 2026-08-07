@@ -183,7 +183,14 @@ export const AIRecommendations: React.FC = () => {
                 >
                   <div className="space-y-3">
                     <div className="relative h-44 rounded-xl overflow-hidden">
-                      <img src={dest.imageUrl} alt={dest.name} className="w-full h-full object-cover" />
+                      <img
+                        src={dest.imageUrl}
+                        alt={dest.name}
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80';
+                        }}
+                        className="w-full h-full object-cover"
+                      />
                       <div className="absolute top-2 left-2">
                         <Badge variant="brand" size="sm" className="bg-slate-900/80 text-white">
                           AI Matched

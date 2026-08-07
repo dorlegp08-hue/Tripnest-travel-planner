@@ -94,6 +94,9 @@ export const ItineraryBuilder: React.FC = () => {
             <img
               src={activeDestination.imageUrl}
               alt={activeDestination.name}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';
+              }}
               className="absolute inset-0 w-full h-full object-cover filter brightness-[0.5]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />

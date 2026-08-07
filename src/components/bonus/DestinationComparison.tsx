@@ -94,7 +94,14 @@ export const DestinationComparison: React.FC = () => {
                 <div key={dest.id} className="space-y-6 text-xs">
                   {/* Top Image Card */}
                   <div className="relative rounded-2xl overflow-hidden h-36 border border-slate-200 dark:border-slate-800 shadow">
-                    <img src={dest.imageUrl} alt={dest.name} className="w-full h-full object-cover" />
+                    <img
+                      src={dest.imageUrl}
+                      alt={dest.name}
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80';
+                      }}
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                     
                     <button

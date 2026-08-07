@@ -86,6 +86,9 @@ export const DestinationDetailModal: React.FC<DestinationDetailModalProps> = ({
           <img
             src={destination.galleryImages[activeImageIndex] || destination.imageUrl}
             alt={destination.name}
+            onError={(e) => {
+              e.currentTarget.src = destination.imageUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';
+            }}
             className="w-full h-full object-cover transition-all duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent" />
@@ -134,7 +137,14 @@ export const DestinationDetailModal: React.FC<DestinationDetailModalProps> = ({
                   activeImageIndex === idx ? 'border-brand-500 scale-105 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
               >
-                <img src={img} alt="thumb" className="w-full h-full object-cover" />
+                <img
+                  src={img}
+                  alt="thumb"
+                  onError={(e) => {
+                    e.currentTarget.src = destination.imageUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80';
+                  }}
+                  className="w-full h-full object-cover"
+                />
               </button>
             ))}
           </div>

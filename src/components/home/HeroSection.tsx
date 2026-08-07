@@ -115,7 +115,7 @@ export const HeroSection: React.FC = () => {
         >
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-brand-400" />
-            <span>18+ Handpicked Indian Destinations</span>
+            <span>30+ Handpicked Indian Destinations</span>
           </div>
           <div className="flex items-center gap-2">
             <Sun className="w-4 h-4 text-amber-400" />
