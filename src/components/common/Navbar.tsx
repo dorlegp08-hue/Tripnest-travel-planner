@@ -41,10 +41,10 @@ export const Navbar: React.FC = () => {
             </div>
             <div>
               <span className="font-display font-extrabold text-2xl tracking-tight bg-gradient-to-r from-brand-600 via-brand-500 to-accent-coral bg-clip-text text-transparent">
-                TripNest
+                Voyago
               </span>
               <span className="block text-[10px] uppercase tracking-widest font-semibold text-slate-400 -mt-1">
-                AI Travel Companion
+                Your travel companion
               </span>
             </div>
           </Link>

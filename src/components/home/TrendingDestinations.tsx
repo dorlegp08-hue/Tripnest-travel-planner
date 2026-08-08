@@ -34,7 +34,7 @@ export const TrendingDestinations: React.FC = () => {
       {/* Section Header & Tabs */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2 block">
+          <span className="text-xs font-bold uppercase tracking-widest text-black mb-2 block">
             Popular Destinations
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-slate-900 dark:text-white">

@@ -39,7 +39,7 @@ export const AIRecommendations: React.FC = () => {
       const rationales = [
         'Optimal weather alignment for this time of year with high traveler satisfaction ratings.',
         'Fits your targeted budget tier while offering top-rated regional activities and scenery.',
-        'Curated by TripNest AI engine for balanced crowd density and memorable cultural heritage.'
+        'Curated by Voyago AI engine for balanced crowd density and memorable cultural heritage.'
       ];
 
       setRecommendations(
@@ -66,7 +66,7 @@ export const AIRecommendations: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-2xl font-bold font-display text-slate-900 dark:text-white">
-                TripNest AI Travel Recommender
+                Voyago AI Travel Recommender
               </h2>
               <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-gradient-to-r from-brand-500 to-accent-coral text-white shadow-sm">
                 AI Beta
@@ -139,7 +139,7 @@ export const AIRecommendations: React.FC = () => {
           disabled={isThinking}
           className="w-full py-3 font-bold"
         >
-          {isThinking ? 'TripNest AI is Analyzing Preferences...' : 'Generate AI Recommendations'}
+          {isThinking ? 'Voyago AI is Analyzing Preferences...' : 'Generate AI Recommendations'}
         </Button>
       </Card>
 
@@ -153,7 +153,7 @@ export const AIRecommendations: React.FC = () => {
             Analyzing Climate Patterns & Budget Matrices...
           </h4>
           <p className="text-xs text-slate-400">
-            Powered by TripNest AI heuristics and real Indian weather mock dataset.
+            Powered by Voyago AI heuristics and real Indian weather mock dataset.
           </p>
         </div>
       )}

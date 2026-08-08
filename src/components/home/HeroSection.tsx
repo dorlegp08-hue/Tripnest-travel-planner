@@ -57,10 +57,7 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.15] text-[#E6FCFF]"
         >
-          Discover & Plan Your Ideal <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-[#E6FCFF] via-sky-200 to-rose-200 bg-clip-text text-transparent">
-            Indian Travel Escapes
-          </span>
+          Your Journey Begins Here.
         </motion.h1>
 
         {/* Subtitle */}
@@ -70,7 +67,7 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-base sm:text-xl text-[#E6FCFF] font-medium max-w-2xl mx-auto leading-relaxed"
         >
-          Smart weather-aware destination discovery, day-by-day itinerary building, live Leaflet maps, and instant budget tools.
+          Escape. Explore. Experience.
         </motion.p>
 
         {/* Search Input Box */}
@@ -104,27 +101,6 @@ export const HeroSection: React.FC = () => {
               Plan Your Trip
             </Button>
           </form>
-        </motion.div>
-
-        {/* Stats Pill Row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="pt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-semibold text-slate-300"
-        >
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-brand-400" />
-            <span>30+ Handpicked Indian Destinations</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Sun className="w-4 h-4 text-amber-400" />
-            <span>Live Weather & Climate Insights</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>100% Free & Client-Side</span>
-          </div>
         </motion.div>
 
       </div>

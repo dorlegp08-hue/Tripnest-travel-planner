@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
               <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-500 to-brand-400 flex items-center justify-center text-white">
                 <Compass className="w-5 h-5" />
               </div>
-              <span className="font-display font-bold text-xl text-white">TripNest</span>
+              <span className="font-display font-bold text-xl text-white">Voyago</span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
               Your intelligent frontend travel itinerary planner and destination discovery platform tailored for unforgettable Indian journeys.
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
 
           {/* Tools & Features */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Smart Tools</h4>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Tools</h4>
             <ul className="space-y-2 text-xs">
               <li><Link to="/bonus" className="hover:text-brand-400 transition-colors">Weather Packing Checklist</Link></li>
               <li><Link to="/bonus" className="hover:text-brand-400 transition-colors">Destination Comparison</Link></li>
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} TripNest Inc. Client-Side Only Web App.</p>
+          <p>© {new Date().getFullYear()} Voyago Inc. Client-Side Only Web App.</p>
           <p className="flex items-center gap-1">
             Crafted with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> for Travel Enthusiasts.
           </p>
