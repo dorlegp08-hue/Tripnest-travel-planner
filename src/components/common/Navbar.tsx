@@ -81,9 +81,9 @@ export const Navbar: React.FC = () => {
                 value={navSearchText}
                 onChange={(e) => setNavSearchText(e.target.value)}
                 placeholder="Search destinations..."
-                className="w-48 xl:w-60 pl-9 pr-4 py-2 text-xs rounded-full bg-slate-100 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 placeholder-slate-400 border border-transparent focus:border-brand-500 focus:bg-white dark:focus:bg-slate-900 focus:outline-none transition-all shadow-inner"
+                className="w-48 xl:w-60 pl-9 pr-4 py-2 text-xs rounded-full bg-[#F8FAFC] dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 placeholder-[#64748B] dark:placeholder-slate-400 border border-[rgba(100,116,139,0.15)] dark:border-transparent focus:border-brand-500 focus:bg-white dark:focus:bg-slate-900 focus:outline-none transition-all shadow-[0_2px_8px_rgba(15,23,42,0.04)] dark:shadow-inner"
               />
-              <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B] dark:text-slate-400" />
             </form>
 
             <ThemeToggle />
@@ -120,9 +120,9 @@ export const Navbar: React.FC = () => {
                   value={navSearchText}
                   onChange={(e) => setNavSearchText(e.target.value)}
                   placeholder="Search destinations (e.g. Goa, Manali)..."
-                  className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400"
+                  className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl bg-[#F8FAFC] dark:bg-slate-800 text-slate-900 dark:text-white placeholder-[#64748B] dark:placeholder-slate-400 border border-[rgba(100,116,139,0.15)] dark:border-transparent shadow-[0_2px_8px_rgba(15,23,42,0.04)]"
                 />
-                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#64748B] dark:text-slate-400" />
               </form>
 
               <div className="space-y-1 pt-2">

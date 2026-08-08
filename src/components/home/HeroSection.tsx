@@ -27,9 +27,9 @@ export const HeroSection: React.FC = () => {
         <img
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
           alt="Travel Hero"
-          className="w-full h-full object-cover scale-105 filter brightness-[0.65] dark:brightness-[0.4]"
+          className="w-full h-full object-cover scale-105 filter brightness-[0.72] dark:brightness-[0.4]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/40 opacity-85 dark:opacity-100" />
       </div>
 
       {/* Floating Animated Orbs */}
@@ -91,7 +91,7 @@ export const HeroSection: React.FC = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Where do you want to go? (e.g., Goa, Manali, Jaipur)..."
-                className="w-full bg-transparent text-sm focus:outline-none placeholder-slate-400 dark:placeholder-slate-500 font-medium"
+                className="w-full bg-transparent text-sm focus:outline-none placeholder-[#64748B] placeholder-opacity-100 dark:placeholder-slate-500 font-medium"
               />
             </div>
 

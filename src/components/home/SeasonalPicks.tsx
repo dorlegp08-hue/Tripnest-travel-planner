@@ -20,25 +20,24 @@ export const SeasonalPicks: React.FC = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div 
-        className="rounded-3xl p-8 sm:p-12 text-slate-900 relative overflow-hidden shadow-2xl border border-white/40"
-        style={{ background: 'linear-gradient(to top right, #89CFF0 0%, #B892FF 50%, #FFB6E6 100%)' }}
+        className="rounded-3xl p-8 sm:p-12 text-slate-900 dark:text-white relative overflow-hidden shadow-2xl border border-white/40 dark:border-teal-500/20 bg-gradient-to-tr from-[#89CFF0] via-[#B892FF] to-[#FFB6E6] dark:from-[#16353C] dark:via-[#1E2D3A] dark:to-[#2A2635]"
       >
         
         {/* Background glow overlay */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 dark:bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-slate-900 bg-white/40 backdrop-blur-md px-3 py-1 rounded-full mb-2 border border-white/50">
+              <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-slate-900 dark:text-[#E6FCFF] bg-white/40 dark:bg-slate-900/40 backdrop-blur-md px-3 py-1 rounded-full mb-2 border border-white/50 dark:border-slate-700/50">
                 <Sparkles className="w-4 h-4 text-amber-500" />
                 <span>Curated Recommendation</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-slate-900 dark:text-white">
                 Top Seasonal Highlights
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-800 font-medium max-w-md bg-white/30 backdrop-blur-sm p-3 rounded-xl border border-white/40">
+            <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-medium max-w-md bg-white/30 dark:bg-slate-900/40 backdrop-blur-sm p-3 rounded-xl border border-white/40 dark:border-slate-700/40">
               Handpicked destinations offering peak weather conditions, breathtaking landscapes, and optimal crowd density right now.
             </p>
           </div>
@@ -72,18 +71,18 @@ export const SeasonalPicks: React.FC = () => {
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-1 text-xs text-brand-700 font-bold mb-1">
-                      <MapPin className="w-3.5 h-3.5 text-brand-600" />
+                    <div className="flex items-center gap-1 text-xs text-brand-700 dark:text-brand-300 font-bold mb-1">
+                      <MapPin className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
                       <span>{dest.state}</span>
                     </div>
-                    <h3 className="text-xl font-bold font-display text-slate-900">{dest.name}</h3>
-                    <p className="text-xs text-slate-700 mt-1 line-clamp-2">{dest.description}</p>
+                    <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white">{dest.name}</h3>
+                    <p className="text-xs text-slate-700 dark:text-slate-200 mt-1 line-clamp-2">{dest.description}</p>
                   </div>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-300/60 flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-800 font-semibold">
-                    <Calendar className="w-3.5 h-3.5 text-purple-600" />
+                <div className="pt-4 mt-4 border-t border-slate-300/60 dark:border-slate-700/60 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-800 dark:text-slate-200 font-semibold">
+                    <Calendar className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                     <span>{dest.bestSeason}</span>
                   </div>
 
