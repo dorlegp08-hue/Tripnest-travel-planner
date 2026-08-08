@@ -43,8 +43,8 @@ export const Navbar: React.FC = () => {
               <span className="font-display font-extrabold text-2xl tracking-tight bg-gradient-to-r from-brand-600 via-brand-500 to-accent-coral bg-clip-text text-transparent">
                 Voyago
               </span>
-              <span className="block text-[10px] uppercase tracking-widest font-semibold text-slate-400 -mt-1">
-                Your travel companion
+              <span className="block text-[10px] uppercase tracking-widest font-semibold text-slate-400 mt-1">
+                Travel Companion
               </span>
             </div>
           </Link>
@@ -59,10 +59,9 @@ export const Navbar: React.FC = () => {
                   to={link.path}
                   end={link.path === '/'}
                   className={({ isActive }) =>
-                    `flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover-gradient-effect neon-glass-hover ${
-                      isActive
-                        ? 'nav-desktop-active'
-                        : 'text-slate-700 dark:text-slate-200'
+                    `flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover-gradient-effect neon-glass-hover ${isActive
+                      ? 'nav-desktop-active'
+                      : 'text-slate-700 dark:text-slate-200'
                     }`
                   }
                 >
@@ -135,10 +134,9 @@ export const Navbar: React.FC = () => {
                       end={link.path === '/'}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={({ isActive }) =>
-                        `flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                          isActive
-                            ? 'nav-mobile-active font-semibold'
-                            : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                        `flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${isActive
+                          ? 'nav-mobile-active font-semibold'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                         }`
                       }
                     >

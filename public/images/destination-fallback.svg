@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#164E63"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <path d="M0 560L220 360L400 510L600 260L850 530L1010 400L1200 570V800H0V560Z" fill="#0B3D4A" opacity=".92"/>
+  <path d="M0 650L270 440L450 620L670 380L900 630L1080 490L1200 610V800H0V650Z" fill="#082F49" opacity=".92"/>
+  <circle cx="600" cy="385" r="62" fill="#E6FCFF" fill-opacity=".93"/>
+  <path d="M600 337C573.5 337 552 358.5 552 385C552 421 600 470 600 470C600 470 648 421 648 385C648 358.5 626.5 337 600 337ZM600 405C589 405 580 396 580 385C580 374 589 365 600 365C611 365 620 374 620 385C620 396 611 405 600 405Z" fill="#0F766E"/>
+  <text x="600" y="550" fill="#E6FCFF" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">Destination image unavailable</text>
+</svg>

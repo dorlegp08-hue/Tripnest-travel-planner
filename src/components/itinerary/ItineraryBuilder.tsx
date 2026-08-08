@@ -95,7 +95,8 @@ export const ItineraryBuilder: React.FC = () => {
               src={activeDestination.imageUrl}
               alt={activeDestination.name}
               onError={(e) => {
-                e.currentTarget.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/images/destination-fallback.svg';
               }}
               className="absolute inset-0 w-full h-full object-cover filter brightness-[0.5]"
             />

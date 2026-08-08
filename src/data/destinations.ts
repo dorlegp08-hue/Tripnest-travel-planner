@@ -97,7 +97,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.6,
     bestSeason: 'September to April',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.squarespace-cdn.com/content/v1/6487957c473a673b4a418c49/2d9cc68a-2cc9-460c-adb2-ef0f2bea647d/Rishikesh%2BRiver.jpeg?format=1200w',
     galleryImages: [
       'https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
@@ -118,7 +118,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.8,
     bestSeason: 'October to February',
     crowdLevel: 'low',
-    imageUrl: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://www.kalavad.com/wp-content/uploads/2020/05/hampi_temple_kalavad.com_.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80'
@@ -138,7 +138,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.7,
     bestSeason: 'September to March',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://i.natgeofe.com/n/a5cd2696-f8bb-4e87-acc6-cafdfd9b92fa/romantic-adventures-south-india.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
@@ -198,7 +198,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.6,
     bestSeason: 'October to March',
     crowdLevel: 'low',
-    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80'
@@ -218,7 +218,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.7,
     bestSeason: 'October to December, March to May',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1696426886039-a3b5c8774e3d?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80'
@@ -238,7 +238,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.5,
     bestSeason: 'October to June',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://www.gozocabs.com/blog/wp-content/uploads/2016/09/ooty.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
@@ -247,24 +247,24 @@ export const mockDestinations: Destination[] = [
     coordinates: { lat: 11.4102, lng: 76.6950 }
   },
   {
-    id: 'jaisalmer',
-    name: 'Jaisalmer',
-    state: 'Rajasthan',
+    id: 'pune',
+    name: 'Pune',
+    state: 'Maharashtra',
     country: 'India',
-    type: 'adventure',
-    weather: 'sunny',
+    type: 'city',
+    weather: 'mild',
     budgetLevel: 'medium',
-    pricePerDay: 3100,
-    rating: 4.8,
-    bestSeason: 'November to March',
+    pricePerDay: 2500,
+    rating: 4.7,
+    bestSeason: 'October to March',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
-      'https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=80'
     ],
-    description: 'The Golden City of the Thar Desert featuring yellow sandstone fortresses, dune camel safaris, and overnight desert glamping.',
-    coordinates: { lat: 26.9157, lng: 70.9083 }
+    description: 'Cultural capital of Maharashtra featuring historic Shaniwar Wada fort, Aga Khan Palace, Sinhagad Fort treks, and bustling IT & cafe hub.',
+    coordinates: { lat: 18.5204, lng: 73.8567 }
   },
   {
     id: 'shillong',
@@ -278,7 +278,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.8,
     bestSeason: 'September to May',
     crowdLevel: 'low',
-    imageUrl: 'https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'
@@ -399,7 +399,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.7,
     bestSeason: 'October to March',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://karthikraja.blog/wp-content/uploads/2017/11/coorg20karnataka20285220of2012029-l.jpg?w=1200',
     galleryImages: [
       'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80'
@@ -419,7 +419,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.6,
     bestSeason: 'September to May',
     crowdLevel: 'low',
-    imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80'
@@ -467,26 +467,7 @@ export const mockDestinations: Destination[] = [
     description: 'Home to the iconic Taj Mahal—one of the Seven Wonders of the World—alongside Agra Fort and Fatehpur Sikri Mughal wonders.',
     coordinates: { lat: 27.1767, lng: 78.0081 }
   },
-  {
-    id: 'amritsar',
-    name: 'Amritsar',
-    state: 'Punjab',
-    country: 'India',
-    type: 'heritage',
-    weather: 'mild',
-    budgetLevel: 'low',
-    pricePerDay: 1900,
-    rating: 4.9,
-    bestSeason: 'November to March',
-    crowdLevel: 'high',
-    imageUrl: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?auto=format&fit=crop&w=1200&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80'
-    ],
-    description: 'Spiritual heart of Sikhism featuring the shimmering Golden Temple (Sri Harmandir Sahib), Wagah Border ceremony, and rich Punjabi cuisine.',
-    coordinates: { lat: 31.6340, lng: 74.8723 }
-  },
+
   {
     id: 'wayanad',
     name: 'Wayanad',
@@ -499,7 +480,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.7,
     bestSeason: 'October to May',
     crowdLevel: 'low',
-    imageUrl: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://www.sreestours.com/blog/wp-content/uploads/2019/08/bansura-hills-wayanad.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80'
@@ -519,7 +500,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.9,
     bestSeason: 'May to October',
     crowdLevel: 'low',
-    imageUrl: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/05/Get-mesmerised-by-Indias-enchanting-valley-Spiti-Valley-Image-2.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80'
@@ -539,7 +520,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.8,
     bestSeason: 'October to March',
     crowdLevel: 'low',
-    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80'
@@ -579,7 +560,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.7,
     bestSeason: 'October to March',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80'
@@ -599,7 +580,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.8,
     bestSeason: 'September to June',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://www.bontravelindia.com/wp-content/uploads/2024/05/Gangtok-Top-Honeymoon-Destinations-in-Sikkim.jpg',
     galleryImages: [
       'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80'
@@ -619,7 +600,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.8,
     bestSeason: 'November to February',
     crowdLevel: 'high',
-    imageUrl: 'https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1572445271230-a78b5944a659?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80'
@@ -639,7 +620,7 @@ export const mockDestinations: Destination[] = [
     rating: 4.6,
     bestSeason: 'September to March',
     crowdLevel: 'medium',
-    imageUrl: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80'

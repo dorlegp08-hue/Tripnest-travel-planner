@@ -38,7 +38,7 @@ export const HeroSection: React.FC = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 text-[#E6FCFF]">
-        
+
         {/* Header Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export const HeroSection: React.FC = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold uppercase tracking-widest text-[#E6FCFF] shadow-lg"
         >
           <Sparkles className="w-4 h-4 text-amber-400" />
-          <span>Next-Gen Travel Itinerary Planner</span>
+          <span>Travel Itinerary Planner</span>
         </motion.div>
 
         {/* Main Headline */}
@@ -87,7 +87,7 @@ export const HeroSection: React.FC = () => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Where do you want to go? (e.g., Goa, Manali, Jaipur)..."
+                placeholder="Where do you want to go?"
                 className="w-full bg-transparent text-sm focus:outline-none placeholder-[#64748B] placeholder-opacity-100 dark:placeholder-slate-500 font-medium"
               />
             </div>

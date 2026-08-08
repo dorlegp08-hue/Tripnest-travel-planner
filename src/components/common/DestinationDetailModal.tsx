@@ -87,7 +87,8 @@ export const DestinationDetailModal: React.FC<DestinationDetailModalProps> = ({
             src={destination.galleryImages[activeImageIndex] || destination.imageUrl}
             alt={destination.name}
             onError={(e) => {
-              e.currentTarget.src = destination.imageUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/images/destination-fallback.svg';
             }}
             className="w-full h-full object-cover transition-all duration-500"
           />
@@ -141,7 +142,8 @@ export const DestinationDetailModal: React.FC<DestinationDetailModalProps> = ({
                   src={img}
                   alt="thumb"
                   onError={(e) => {
-                    e.currentTarget.src = destination.imageUrl || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80';
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/images/destination-fallback.svg';
                   }}
                   className="w-full h-full object-cover"
                 />

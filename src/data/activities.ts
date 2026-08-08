@@ -68,10 +68,11 @@ export const mockActivitiesPerDestination: Record<string, Activity[]> = {
     { id: 'oot-2', name: 'Stroll in Government Botanical Garden', time: '12:00 PM', category: 'relaxation', cost: 100, notes: '55-acre terraced garden with exotic flora', locationName: 'Vanguard Road' },
     { id: 'oot-3', name: 'Boating on Ooty Lake & Pykara Waterfalls', time: '03:00 PM', category: 'relaxation', cost: 500, notes: 'Pedal boating amidst eucalyptus trees', locationName: 'Ooty Lake' }
   ],
-  jaisalmer: [
-    { id: 'jai-s1', name: 'Jaisalmer Fort (Sonar Qila) Walking Tour', time: '09:00 AM', category: 'culture', cost: 250, notes: 'Living fort with markets and Jain temples', locationName: 'Fort Road' },
-    { id: 'jai-s2', name: 'Patwon Ki Haveli Architectural Tour', time: '12:00 PM', category: 'culture', cost: 200, notes: 'Five-storey carved sandstone haveli', locationName: 'Kothari Para' },
-    { id: 'jai-s3', name: 'Thar Desert Camel Safari & Dune Bashing', time: '04:00 PM', category: 'adventure', cost: 2200, notes: 'Includes folk music dance performance at Sam dunes', locationName: 'Sam Sand Dunes' }
+  pune: [
+    { id: 'pne-1', name: 'Shaniwar Wada Fort & Peshwa History Tour', time: '09:30 AM', category: 'culture', cost: 150, notes: 'Historic 18th-century seat of Peshwa rulers', locationName: 'Shaniwar Peth' },
+    { id: 'pne-2', name: 'Visit Aga Khan Palace & Gandhi Memorial', time: '12:30 PM', category: 'culture', cost: 100, notes: 'Stately Italian arches & serene gardens', locationName: 'Kalyani Nagar' },
+    { id: 'pne-3', name: 'Trek to Sinhagad Fort & Enjoy Pithla Bhakri', time: '04:00 PM', category: 'adventure', cost: 300, notes: 'Panoramic sunset view over Western Ghats valleys', locationName: 'Sinhagad Ghat' },
+    { id: 'pne-4', name: 'Cafe Hopping & Street Food in Koregaon Park', time: '07:30 PM', category: 'food', cost: 600, notes: 'Try Puneri Misal Pav & Bakarwadi', locationName: 'Koregaon Park' }
   ],
   shillong: [
     { id: 'shi-1', name: 'Day Trip to Cherrapunji & Nohkalikai Falls', time: '08:00 AM', category: 'sightseeing', cost: 1800, notes: 'India\'s tallest plunge waterfall view', locationName: 'Cherrapunji' },
@@ -123,11 +124,7 @@ export const mockActivitiesPerDestination: Record<string, Activity[]> = {
     { id: 'agr-2', name: 'Guided Tour of Agra Red Fort', time: '10:30 AM', category: 'culture', cost: 600, notes: 'Mughal royal residences & Musamman Burj', locationName: 'Agra Fort' },
     { id: 'agr-3', name: 'Sunset View of Taj Mahal from Mehtab Bagh', time: '05:30 PM', category: 'sightseeing', cost: 300, notes: 'Reflecting view across Yamuna river', locationName: 'Mehtab Bagh' }
   ],
-  amritsar: [
-    { id: 'amr-1', name: 'Golden Temple Morning Visit & Guru ka Langar', time: '08:00 AM', category: 'culture', cost: 0, notes: 'Experience world\'s largest community mega kitchen', locationName: 'Golden Temple Complex' },
-    { id: 'amr-2', name: 'Jallianwala Bagh Memorial & Heritage Street', time: '11:30 AM', category: 'culture', cost: 0, notes: 'Historic martyr memorial park', locationName: 'Heritage Street' },
-    { id: 'amr-3', name: 'Wagah Border Beating Retreat Ceremony', time: '04:00 PM', category: 'sightseeing', cost: 0, notes: 'High-energy India-Pakistan military parade', locationName: 'Wagah Border' }
-  ],
+
   wayanad: [
     { id: 'way-1', name: 'Edakkal Caves Prehistoric Petroglyph Trek', time: '08:30 AM', category: 'adventure', cost: 200, notes: 'Neolithic age cave rock carvings', locationName: 'Ambukuthi Mala' },
     { id: 'way-2', name: 'Banasura Sagar Dam Speedboat Ride', time: '01:00 PM', category: 'relaxation', cost: 450, notes: 'Largest earthen dam in India', locationName: 'Padinjarathara' },

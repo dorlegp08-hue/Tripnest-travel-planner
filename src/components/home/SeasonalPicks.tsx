@@ -59,7 +59,8 @@ export const SeasonalPicks: React.FC = () => {
                       src={dest.imageUrl}
                       alt={dest.name}
                       onError={(e) => {
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80';
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/images/destination-fallback.svg';
                       }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

@@ -44,7 +44,8 @@ export const MapDestinationList: React.FC<MapDestinationListProps> = ({
                 src={dest.imageUrl}
                 alt={dest.name}
                 onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80';
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = '/images/destination-fallback.svg';
                 }}
                 className="w-14 h-14 rounded-xl object-cover shrink-0 shadow-sm"
               />
