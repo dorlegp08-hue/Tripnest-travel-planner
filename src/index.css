@@ -159,14 +159,7 @@
   -webkit-backdrop-filter: blur(12px);
 }
 
-.site-card h1, .site-card h2, .site-card h3, .site-card h4, .site-card p, .site-card span {
-  color: #0f172a;
-}
 
-.dark .site-card h1, .dark .site-card h2, .dark .site-card h3,
-.dark .site-card h4, .dark .site-card p, .dark .site-card span {
-  color: #e0f4f8;
-}
 
 .neon-glass-hover {
   transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1) !important;
